@@ -10,7 +10,7 @@ if($method == 'POST')
 	$com = strtolower($com);
 	
 		
-	if ($com == 'amountsold')
+	if ($com == 'amountsold' or $com == 'margin' or $com == 'qtysold') 
 	{
 		$STATE= $json->queryResult->parameters->STATE;
 		$STATE= strtoupper($STATE);
@@ -25,9 +25,6 @@ if($method == 'POST')
 				
 		$username    = "SANYAM_K";
     		$password    = "Welcome@123";
-		
-		
-		
 		$ch      = curl_init( $json_url );
     		$options = array(
         	CURLOPT_SSL_VERIFYPEER => false,
@@ -38,20 +35,21 @@ if($method == 'POST')
     		curl_setopt_array( $ch, $options );
 		$json = curl_exec( $ch );
 		$someobj = json_decode($json,true);
-		
+		if ($com == 'amountsold')
+			$distext = "Total sale in ".$value["STATE"]." is $".$value["AMOUNT"];
+		else if($com == 'margin')
+			$distext = "Total profit value in ".$value["STATE"]." is $".$value["MARGIN"];
+		else if ($com == 'qtysold')
+			$distext = "Total quantity sold of worth $".$value["QUANTITY_SOLD"]." in ".$value["STATE"];
 		foreach ($someobj["results"] as $value) 
 		{
-			$speech .= "Total sale in ".$value["STATE"]." is $".$value["AMOUNT_SOLD"];
+			$speech .= $distext;
 			$speech .= "\r\n";
 			
 			
        		 }
-		
-	
-		
-		
 	}
-	else if ($com == 'margin') 
+	/*else if ($com == 'margin') 
 		
 	{
 		$STATE= $json->queryResult->parameters->STATE;
@@ -122,7 +120,7 @@ if($method == 'POST')
 	
 		
 		
-	}
+	}*/
 	
 	$response = new \stdClass();
     	$response->fulfillmentText = $speech;
