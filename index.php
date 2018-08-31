@@ -49,78 +49,7 @@ if($method == 'POST')
 			
        		 }
 	}
-	/*else if ($com == 'margin') 
-		
-	{
-		$STATE= $json->queryResult->parameters->STATE;
-		$STATE= strtoupper($STATE);
-		
-		
-		
-		$username    = "SANYAM_K";
-    		$password    = "Welcome@123";
-		
-		$json_url = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/EFASHION_TEST.xsjs?command=$com&STATE='$STATE'";
-		
-		$ch      = curl_init( $json_url );
-    		$options = array(
-        	CURLOPT_SSL_VERIFYPEER => false,
-        	CURLOPT_RETURNTRANSFER => true,
-        	CURLOPT_USERPWD        => "{$username}:{$password}",
-        	CURLOPT_HTTPHEADER     => array( "Accept: application/json" ),
-    		);
-    		curl_setopt_array( $ch, $options );
-		$json = curl_exec( $ch );
-		$someobj = json_decode($json,true);
-		
-		foreach ($someobj["results"] as $value) 
-		{
-			$speech = "Total profit value in ".$value["STATE"]." is $".$value["MARGIN"];
-			$speech .= "\r\n";
-			
-			
-       		 }
-			
 	
-		
-		
-	}
-	else if ($com == 'qtysold') 
-		
-	{
-		$STATE= $json->queryResult->parameters->STATE;
-		$STATE= strtoupper($STATE);
-		
-		
-		
-		$username    = "SANYAM_K";
-    		$password    = "Welcome@123";
-		
-		$json_url = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/EFASHION_TEST.xsjs?command=$com&STATE='$STATE'";
-		
-		$ch      = curl_init( $json_url );
-    		$options = array(
-        	CURLOPT_SSL_VERIFYPEER => false,
-        	CURLOPT_RETURNTRANSFER => true,
-        	CURLOPT_USERPWD        => "{$username}:{$password}",
-        	CURLOPT_HTTPHEADER     => array( "Accept: application/json" ),
-    		);
-    		curl_setopt_array( $ch, $options );
-		$json = curl_exec( $ch );
-		$someobj = json_decode($json,true);
-		
-		foreach ($someobj["results"] as $value) 
-		{
-			$speech = "Total quantity sold of worth $".$value["QUANTITY_SOLD"]." in ".$value["STATE"]  ;
-			$speech .= "\r\n";
-			
-			
-       		 }
-			
-	
-		
-		
-	}*/
 	
 	$response = new \stdClass();
     	$response->fulfillmentText = $speech;
