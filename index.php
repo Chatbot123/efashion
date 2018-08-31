@@ -14,6 +14,8 @@ if($method == 'POST')
 	{
 		$STATE= $json->queryResult->parameters->STATE;
 		$STATE= strtoupper($STATE);
+		if ($STATE == 'EVERY' or $STATE == 'ALL' or $STATE == 'EACH')
+		{$STATE = "";}
 		
 		
 		
