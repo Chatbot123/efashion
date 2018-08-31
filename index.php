@@ -10,7 +10,7 @@ if($method == 'POST')
 	$com = strtolower($com);
 	
 		
-	if (($com == 'amountsold') or ($com=='margin') or ($com=='qtysold'))
+	if ($com == 'amountsold') or ($com=='margin') or ($com=='qtysold')
 	{
 		$STATE= $json->queryResult->parameters->STATE;
 		$STATE= strtoupper($STATE);
