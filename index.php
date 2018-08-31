@@ -36,14 +36,14 @@ if($method == 'POST')
 		$json = curl_exec( $ch );
 		$someobj = json_decode($json,true);
 		if ($com == 'amountsold')
-			$distext = "Total sale in ".$value["STATE"]." is $".$value["AMOUNT"];
+			$distext = "Total sale value is of worth $";
 		else if($com == 'margin')
-			$distext = "Total profit value in ".$value["STATE"]." is $".$value["MARGIN"];
+			$distext = "Total profit value is of worth $";
 		else if ($com == 'qtysold')
-			$distext = "Total quantity sold of worth $".$value["QUANTITY_SOLD"]." in ".$value["STATE"];
+			$distext = "Total quantity sold of worth $";
 		foreach ($someobj["results"] as $value) 
 		{
-			$speech .= $distext;
+			$speech .= $distext. $value["AMOUNT"]." in ".$value["STATE"];
 			$speech .= "\r\n";
 			
 			
