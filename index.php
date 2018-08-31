@@ -10,7 +10,7 @@ if($method == 'POST')
 	$com = strtolower($com);
 	
 		
-	if ($com == 'amountsold') or ($com=='margin') or ($com=='qtysold')
+	if (($com == 'amountsold') or ($com=='margin') or ($com=='qtysold'))
 	{
 		$STATE= $json->queryResult->parameters->STATE;
 		$STATE= strtoupper($STATE);
@@ -35,7 +35,7 @@ if($method == 'POST')
 		
 		foreach ($someobj["results"] as $value) 
 		{
-			$speech = "Total sale in ".$value["STATE"]." is $".$value["AMOUNT_SOLD"];
+			$speech = "Total sale in ".$value["STATE"]." is $".$value["AMOUNT"];
 			$speech .= "\r\n";
 			
 			
