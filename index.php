@@ -41,12 +41,12 @@ if($method == 'POST')
 		
 		foreach ($someobj["results"] as $value) 
 		{
-			$speech = "Total sale in ".$value["STATE"]." is $".$value["AMOUNT_SOLD"];
+			$speech .= "Total sale in ".$value["STATE"]." is $".$value["AMOUNT_SOLD"];
 			$speech .= "\r\n";
 			
 			
        		 }
-			
+		
 	
 		
 		
