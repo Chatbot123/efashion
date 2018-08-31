@@ -71,7 +71,7 @@ if($method == 'POST')
 		
 		foreach ($someobj["results"] as $value) 
 		{
-			$speech = "Total sale in ".$value["STATE"]." is $".$value["MARGIN"];
+			$speech = "Total profit value in ".$value["STATE"]." is $".$value["MARGIN"];
 			$speech .= "\r\n";
 			
 			
@@ -107,7 +107,7 @@ if($method == 'POST')
 		
 		foreach ($someobj["results"] as $value) 
 		{
-			$speech = "Total sale in ".$value["STATE"]." is $".$value["QUANTITY_SOLD"];
+			$speech = "Total quantity sold of worth $".$value["QUANTITY_SOLD"]." in ".$value["STATE"]  ;
 			$speech .= "\r\n";
 			
 			
