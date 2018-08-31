@@ -22,10 +22,7 @@ if($method == 'POST')
 		{
 			$json_url = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/EFASHION_TEST.xsjs?command=$com&STATE='$STATE'";
 		}
-			
-		
-		
-		
+				
 		$username    = "SANYAM_K";
     		$password    = "Welcome@123";
 		
