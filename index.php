@@ -29,6 +29,7 @@ if($method == 'POST')
 		else if (in_array($STATE, $userespnose,TRUE) and $CITY = ""))
 		{
 			$STATE = 'ALL';
+			$CITY = '0';
 		}
 		
 		$json_url = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/EFASHION_TEST.xsjs?command=$com&STATE='$STATE'&CITY='$CITY'";		
