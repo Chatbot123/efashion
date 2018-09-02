@@ -14,25 +14,15 @@ if($method == 'POST')
 	{
 		$STATE= $json->queryResult->parameters->STATE;
 		$STATE= strtoupper($STATE);
-		
-		$userespnose = array("EACH", "EVERY","ALL");
-		if (in_array($STATE, $userespnose,TRUE) and in_array($CITY, $userespnose,TRUE) ) 
+		if ($STATE == 'EVERY' or $STATE == 'ALL' or $STATE == 'EACH')
 		{
-			$STATE = 'ALL'; 
-		 	$CITY='ALL'; 
+		   $json_url = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/EFASHION_TEST.xsjs?command=$com";
 		}
-		else if (in_array($STATE, $userespnose,FALSE) and $STATE!="" and in_array($CITY, $userespnose,TRUE))
+		else
 		{
-			$CITY = 'ALL';
-			
+			$json_url = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/EFASHION_TEST.xsjs?command=$com&STATE='$STATE'";
 		}
-		else if (in_array($STATE, $userespnose,TRUE) and $CITY = ""))
-		{
-			$STATE = 'ALL';
-			$CITY = '0';
-		}
-		
-		$json_url = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/EFASHION_TEST.xsjs?command=$com&STATE='$STATE'&CITY='$CITY'";		
+				
 		$username    = "SANYAM_K";
     		$password    = "Welcome@123";
 		$ch      = curl_init( $json_url );
