@@ -14,13 +14,16 @@ if($method == 'POST')
 	{
 		$STATE= $json->queryResult->parameters->STATE;
 		$STATE= strtoupper($STATE);
-		if ($STATE == 'EVERY' or $STATE == 'ALL' or $STATE == 'EACH')
+		$json_url = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/EFASHION_TEST.xsjs?command=$com";
+		$userespnose = array("EACH", "EVERY","ALL");
+		if (in_array($STATE, $userespnose,TRUE) and in_array($CITY, $userespnose,TRUE) ) {$json_url .= "";}
+		/*if ($STATE == 'EVERY' or $STATE == 'ALL' or $STATE == 'EACH')
 		{
 		   $json_url = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/EFASHION_TEST.xsjs?command=$com";
-		}
-		else
+		}*/
+		else if (in_array($STATE, $userespnose,FALSE))
 		{
-			$json_url = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/EFASHION_TEST.xsjs?command=$com&STATE='$STATE'";
+			$json_url .= "&STATE='$STATE'";
 		}
 				
 		$username    = "SANYAM_K";
