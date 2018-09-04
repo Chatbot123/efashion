@@ -1,4 +1,3 @@
-
 <?php
 
 $method = $_SERVER['REQUEST_METHOD'];
@@ -11,16 +10,30 @@ if($method == 'POST')
 	$com = strtolower($com);
 	
 		
-	if ($com == 'amountsold' or $com == 'margin' or $com == 'qtysold' or $com=='shoplist' or $com=='shopsale') 
+	if ($com == 'amountsold' or $com == 'margin' or $com == 'qtysold' or $com=='shoplist') 
 	{
-		$STATE= $json->queryResult->parameters->STATE;
+		if(isset($json->queryResult->parameters->STATE))
+		{	$STATE= $json->queryResult->parameters->STATE; } else {$STATE = '0';}
 		$STATE= strtoupper($STATE);
-		$CITY= $json->queryResult->parameters->CITY;
+		if(isset($json->queryResult->parameters->CITY))
+		{	$CITY= $json->queryResult->parameters->CITY; } else {$CITY = '0';}
+		//$CITY= $json->queryResult->parameters->CITY;
 		$CITY= strtoupper($CITY);
-		/*$SHOPNAME= $json->queryResult->parameters->SHOPNAME;
+		if(isset($json->queryResult->parameters->SHOPNAME))
+		{	$SHOPNAME= $json->queryResult->parameters->SHOPNAME; } else {$SHOPNAME = '0';}
+		if(isset($json->queryResult->parameters->YR))
+		{	$YR= $json->queryResult->parameters->YR; } else {$YR = '0';}
+		
+		if(isset($json->queryResult->parameters->QTR))
+		{	$QTR= $json->queryResult->parameters->QTR; } else {$QTR = '0';}
+		
+		if(isset($json->queryResult->parameters->MTH))
+		{	$MTH= $json->queryResult->parameters->MTH; } else {$MTH = '0';}
+		//$SHOPNAME= $json->queryResult->parameters->SHOPNAME;
 		$SHOPNAME= strtoupper($SHOPNAME);
-		$SHOPNAME = str_replace(' ', '', $SHOPNAME);*/
+		$SHOPNAME = str_replace(' ', '', $SHOPNAME);
 		$CITY = str_replace(' ', '', $CITY);
+		$STATE = str_replace(' ', '', $STATE);
 		if($CITY=="" )
 		{
 			$CITY='0';
@@ -32,28 +45,22 @@ if($method == 'POST')
 			$STATE = 'ALL';
 		}
 		$userespnose = array("EACH", "EVERY","ALL");
+		if(in_array($SHOPNAME, $userespnose))
+		{
+			$SHOPNAME = 'ALL';
+		}
+		$userespnose = array("EACH", "EVERY","ALL");
 		if(in_array($CITY, $userespnose))
 		{
 			$CITY = 'ALL';
 		}
+		$userespnose = array("EACH", "EVERY","ALL");
+		if(in_array($YR, $userespnose))
+		{
+			$YR = 'ALL';
+		}
 		
-		/*else if (in_array($STATE, $userespnose,TRUE) and in_array($CITY, $userespnose,TRUE) ) 
-		{
-			$STATE = 'ALL'; 
-		 	$CITY='ALL'; 
-		}
-		else if (in_array($STATE, $userespnose,FALSE) and $STATE!="" and in_array($CITY, $userespnose,TRUE))
-		{
-			$CITY = 'ALL';
-			
-		}
-		else if (in_array($STATE, $userespnose,TRUE) and $CITY = ""))
-		{
-			$STATE = 'ALL';
-			$CITY = '0';
-		}*/
-					
-		$json_url = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/EFASHION_DEV.xsjs?command=$com&STATE=$STATE&CITY=$CITY";		
+		$json_url = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/EFASHION_DEV.xsjs?command=$com&STATE=$STATE&CITY=$CITY&SHOPNAME=$SHOPNAME&YR=$YR&QTR=$QTR&MTH=$MTH";		
 		//echo $json_url;
 		$username    = "SANYAM_K";
     		$password    = "Welcome@123";
@@ -83,9 +90,19 @@ if($method == 'POST')
 			{
 				$discity = "";
 			}
+			if($SHOPNAME != '0')
+			{
+				$disshop = " of shop ";
+			}
+			else
+			{	$disshop = "";	}
+			
+			if($YR != '0')
+			{
+				$disyear = " for year ";} else {$disyear = "";}
 			foreach ($someobj["results"] as $value) 
 			{
-				$speech .= $distext. $value["AMOUNT"].$discity.$value["CITY"]." in ".$value["STATE"];
+				$speech .= $distext. $value["AMOUNT"].$disshop.$value["SHOP_NAME"].$discity.$value["CITY"]." in ".$value["STATE"].$disyear.$value["YR"];
 				$speech .= "\r\n";
 			 }
 		}
@@ -97,6 +114,7 @@ if($method == 'POST')
 				$speech .= "\r\n";
 			 }
 		}
+		
 			
 	}
 	
