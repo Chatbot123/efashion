@@ -166,19 +166,19 @@ if($method == 'POST')
 			else if($com == 'margin')
 				$distext = "Total profit value is of worth $";
 			else if ($com == 'qtysold')
-				$distext = "Total quantity sold of worth $";
+				$distext = "Total ";
 			if($CITY !='0')	{ $discity = " for city "; } else { $discity = ""; }
 			if($STATE !='0'){ $disstate = " in state "; } else { $disstate = ""; }
-			if($FAMILY !='0'){ $disfamily = " for family "; } else {$disfamily = ""; }
-            		if($CATEGORY !='0'){ $discategory = " for category "; }	else { $discategory = ""; }
-            		if($ARTICLE !='0'){$disarticle = " for article ";} else	{ $disarticle = ""; }
+			if($FAMILY !='0'){ $disfamily = " family of product sold "; } else {$disfamily = ""; }
+            		if($CATEGORY !='0'){ $discategory = " category sold "; }	else { $discategory = ""; }
+            		if($ARTICLE !='0'){$disarticle = " article sold ";} else	{ $disarticle = ""; }
 			if($SHOPNAME != '0') { $disshop = " of shop "; } else{	$disshop = "";	}
 			if($YR != '0')	{      $disyear = " for year ";} else {$disyear = "";}
-			if($QTR != '0')	{      $disqtr = " for quarter ";} else {$disqtr = "";}
+			if($QTR != '0')	{      $disqtr = " in quarter ";} else {$disqtr = "";}
 			if($MTH != '0')	{      $dismth = " for month ";} else {$dismth = "";}
 			foreach ($someobj["results"] as $value) 
 			{
-				$speech .= $distext. $value["AMOUNT"].$disshop.$value["SHOP_NAME"].$discity.$value["CITY"].$disstate.$value["STATE"].$disqtr.$value["QTR"].$dismth.$value["MTH"].$disyear.$value["YR"].$disfamily.$value["FAMILY_NAME"].$discategory.$value["CATEGORY"].$disarticle.$value["ARTICLE_LABEL"];
+				$speech .= $distext. $value["AMOUNT"].$disshop.$value["SHOP_NAME"].$discity.$value["CITY"].$disstate.$value["STATE"]." ".$value["FAMILY_NAME"].$disfamily." ".$value["CATEGORY"].$discategory." ".$value["ARTICLE_LABEL"].$disarticle.$disqtr.$value["QTR"].$dismth.$value["MTH"].$disyear.$value["YR"];
 				$speech .= "\r\n";
 			 }
 			//if($speech != "") { $speech .= "I can drill down further\n";}
