@@ -273,6 +273,8 @@ if($method == 'POST')
 	
 	else if ($com=='weather')
 	{
+			if(isset($json->queryResult->parameters->CITY))
+		{	$CITY= $json->queryResult->parameters->CITY; } else {$CITY = '0';}
 		if(strlen($CITY) > 1) 
 		{	 
 
@@ -282,8 +284,7 @@ if($method == 'POST')
 			$opts['http']['header']="Accept-language: en\r\n"."Cookie: foo=bar\r\n";
 
 			$t1=stream_context_create($opts);
-			if(isset($json->queryResult->parameters->CITY))
-		{	$CITY= $json->queryResult->parameters->CITY; } else {$CITY = '0';}
+		
 			// Open the file using the HTTP headers set above
 			$test_file=file_get_contents("https://api.openweathermap.org/data/2.5/weather?q=$CITY&appid=4b75f2eaa9f9a62fe7309f06b84b69f9", false, $t1);
 			
