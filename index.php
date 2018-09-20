@@ -180,7 +180,7 @@ if($method == 'POST')
 			{
 				$speech .= $distext. $value["AMOUNT"].$disshop.$value["SHOP_NAME"].$discity.$value["CITY"].$disstate.$value["STATE"]." ".$value["FAMILY_NAME"].$disfamily." ".$value["CATEGORY"].$discategory." ".$value["ARTICLE_LABEL"].$disarticle.$disqtr.$value["QTR"].$dismth.$value["MTH"].$disyear.$value["YR"];
 				$speech .= "\r\n";
-				$speech .= "Do you want this info on mail\n";
+				//$speech .= "Do you want this info on mail\n";
 			 }
 			//if($speech != "") { $speech .= "I can drill down further\n";}
 		}
