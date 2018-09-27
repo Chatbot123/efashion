@@ -260,19 +260,19 @@ if($method == 'POST')
 			if ($com == 'amountsold' )
 			{
 				$distext = "Sale  ";
-				$distext .= "\r\n";
+				//$distext .= "\r\n";
 				$show_dlr = "worth of $";
 			}
 			else if($com == 'margin' )
 			{
 				$distext = "Margin ";
-				$distext .= "\r\n";
+				//$distext .= "\r\n";
 				$show_dlr = "worth of $";
 			}
 			else if ($com == 'qtysold' )
 			{
 				$distext = "Products ";
-				$distext .= "\r\n";
+				//$distext .= "\r\n";
 				$show_dlr = "";
 			}
 			if ($action == 'HighLowValues')
