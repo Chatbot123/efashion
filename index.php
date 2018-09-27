@@ -282,8 +282,8 @@ if($method == 'POST')
 				if($showqty==1)
 				{$show_dlr = "";} else {$show_dlr = "Worth of $";}
 				 $distext .= "\r\n";
-				$speech .= $distext;
-				
+				 $speech .= $distext;
+				 $distext="";
 			}
 			if($CITY !='0' 	|| $ENT_CITY != '0')	{ $discity = " for city "; } else { $discity = ""; }
 			if($STATE !='0' || $ENT_STATE != '0'){ $disstate = " in state "; } else { $disstate = ""; }
