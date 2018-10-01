@@ -21,7 +21,9 @@ if($method == 'POST')
 		if($com != "")
 		{ $action = ""; }
 		else
-		{$action = 'HighLowValues';}
+		{$action = 'HighLowValues';
+				
+		}
 	}
 			
 	
