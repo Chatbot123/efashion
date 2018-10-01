@@ -16,7 +16,16 @@ if($method == 'POST')
 	if(isset($json->queryResult->action))
 		{	$action = $json->queryResult->action; } else {$action = '0';}
 	
-	if($action == 'MyPreviousIntent' and $myaction == 'HighLowValues' ){$action = 'HighLowValues';}
+	if($action == 'MyPreviousIntent' and $myaction == 'HighLowValues' )
+	{
+		if($com != "")
+		{ $action = ""; }
+		else
+		{$action = 'HighLowValues';}
+	}
+			
+	
+	
 	
 	if(($com == 'liststates' || $com == 'shoplist' || $com == 'listcity' || $com == 'listfamily' || $com == 'listcategory' || $com == 'listarticle' || $com == 'listyear') && $my_action == 'amountsold' && $action == '0')
 	{$com = "amountsold";}
@@ -269,19 +278,19 @@ if($method == 'POST')
 			if ($com == 'amountsold' )
 			{
 				$distext = "Sale  ";
-				$distext .= "\r\n";
+				//$distext .= "\r\n";
 				$show_dlr = "worth of $";
 			}
 			else if($com == 'margin' )
 			{
 				$distext = "Margin ";
-				$distext .= "\r\n";
+				//$distext .= "\r\n";
 				$show_dlr = "worth of $";
 			}
 			else if ($com == 'qtysold' )
 			{
 				$distext = "Products ";
-				$distext .= "\r\n";
+				//$distext .= "\r\n";
 				$show_dlr = "";
 			}
 			if ($action == 'HighLowValues')
