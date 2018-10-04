@@ -274,6 +274,13 @@ if($method == 'POST')
 		$someobj = json_decode($json,true);
 		}*/
 	//echo $json_url;
+	$salemeasure = array("SALES","sale");
+	if(in_array($ENT_MEASURE, $salemeasure)){$com = "amountsold"; }
+	$marginmeasure = array("margin","PROFIT");
+	if(in_array($ENT_MEASURE, $marginmeasure)){$com = "margin"; }
+	$qtymeasure = array("QUANTITY","QTY","ITEMS","PRODUCTS");
+	if(in_array($ENT_MEASURE, $qtymeasure)){$com = "qtysold"; }
+	
 		if($com == 'amountsold' or $com == 'margin' or $com == 'qtysold' or $action == 'HighLowValues'  )
 		{
 			
