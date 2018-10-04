@@ -319,9 +319,9 @@ if($method == 'POST')
             		if($CATEGORY !="" || $ENT_CAT !=""){ $discategory = " category sold "; }	else { $discategory = ""; }
             		if($ARTICLE !="" || $ENT_ARTICLE !=""){$disarticle = " article sold ";} else	{ $disarticle = ""; }
 			if($SHOPNAME !="" || $ENT_SHOP !="") { $disshop = " of shop "; } else{	$disshop = "";	}
-			if($YR != '0')	{      $disyear = " for year ";} else {$disyear = "";}
-			if($QTR != '0')	{      $disqtr = " in quarter ";} else {$disqtr = "";}
-			if($MTH != '0')	{      $dismth = " for month ";} else {$dismth = "";}
+			if($YR != '0')	{      $disyear = "for year ";} else {$disyear = "";}
+			if($QTR != '0')	{      $disqtr = "in quarter ";} else {$disqtr = "";}
+			if($MTH != '0')	{      $dismth = "for month ";} else {$dismth = "";}
 			
 			
 			
