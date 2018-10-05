@@ -29,13 +29,13 @@ if($method == 'POST')
 	
 	
 	
-	if(($com == 'liststates' || $com == 'shoplist' || $com == 'listcity' || $com == 'listfamily' || $com == 'listcategory' || $com == 'listarticle' || $com == 'listyear') && $my_action == 'amountsold' && $action == '0')
+	if(($com == 'liststates' || $com == 'shoplist' || $com == 'listcity' || $com == 'listfamily' || $com == 'listcategory' || $com == 'listarticle' || $com == 'listyear') && $my_action == 'amountsold' && $action == 'MyPreviousIntent')
 	{$com = "amountsold";}
 	
-	if(($com == 'liststates' || $com == 'shoplist' || $com == 'listcity' || $com == 'listfamily' || $com == 'listcategory' || $com == 'listarticle' || $com == 'listyear') && $my_action == 'qtysold' && $action == '0' )
+	if(($com == 'liststates' || $com == 'shoplist' || $com == 'listcity' || $com == 'listfamily' || $com == 'listcategory' || $com == 'listarticle' || $com == 'listyear') && $my_action == 'qtysold' && $action == 'MyPreviousIntent' )
 	{$com = "qtysold";}
 	
-	if(($com == 'liststates' || $com == 'shoplist' || $com == 'listcity' || $com == 'listfamily' || $com == 'listcategory' || $com == 'listarticle' || $com == 'listyear') && $my_action == 'margin' && $action == '0')
+	if(($com == 'liststates' || $com == 'shoplist' || $com == 'listcity' || $com == 'listfamily' || $com == 'listcategory' || $com == 'listarticle' || $com == 'listyear') && $my_action == 'margin' && $action == 'MyPreviousIntent')
 	{$com = "margin";}
 	
 	//to execute xsjs for high and low measures
