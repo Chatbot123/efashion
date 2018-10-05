@@ -124,16 +124,8 @@ if($method == 'POST')
 		$qty_array = array("QUANTITY","QTY","ITEMS","PRODUCTS");
 		if (in_array($ENT_MEASURE, $qty_array)) {$showqty=1;}
 	
-		
 	
 		
-	
-		/*$sale_array = array("SALES","SALE");
-		if (in_array($ENT_MEASURE, $sale_array)) {$showsale=1;}
-		$margin_array = array("MARGIN","PROFIT");
-		if (in_array($ENT_MEASURE, $margin_array)) {$showmearuse=1;}
-		$bottom_array =  array("LOWEST","MINIMUM");
-		if (in_array($ENT_TOP_BOT, $bottom_array)) {$NUM=1;}*/
 	
 		$userespnose = array("PLEASEIGNORE", "IGNORE","IGNOREIT", "ANYVALUE","ANY","NOIDEA","DRILLUP");
 		
@@ -240,8 +232,7 @@ if($method == 'POST')
 		$xsjs_url .= "&NUM=$NUM";
 		
 	//echo $xsjs_url;
-		//if($action == 'HighLowValues')
-		//{
+		
 			$username    = "SANYAM_K";
 			$password    = "Welcome@123";
 			$ch      = curl_init( $xsjs_url );
@@ -254,26 +245,7 @@ if($method == 'POST')
 			curl_setopt_array( $ch, $options );
 			$json = curl_exec( $ch );
 			$someobj = json_decode($json,true);
-		/*}
-		else
-		{
 		
-		$json_url = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/EFASHION_DEV.xsjs?command=$com&STATE=$STATE&CITY=$CITY&SHOPNAME=$SHOPNAME&YR=$YR&QTR=$QTR&MTH=$MTH&FAMILY=$FAMILY&CATEGORY=$CATEGORY&ARTICLE=$ARTICLE&ACTION=$action";		
-		
-		$username    = "SANYAM_K";
-    		$password    = "Welcome@123";
-		$ch      = curl_init( $json_url );
-    		$options = array(
-        	CURLOPT_SSL_VERIFYPEER => false,
-        	CURLOPT_RETURNTRANSFER => true,
-        	CURLOPT_USERPWD        => "{$username}:{$password}",
-        	CURLOPT_HTTPHEADER     => array( "Accept: application/json" ),
-    		);
-    		curl_setopt_array( $ch, $options );
-		$json = curl_exec( $ch );
-		$someobj = json_decode($json,true);
-		}*/
-	//echo $json_url;
 	$salemeasure = array("SALES","sale");
 	if(in_array($ENT_MEASURE, $salemeasure)){$com = "amountsold"; }
 	$marginmeasure = array("margin","PROFIT");
@@ -319,9 +291,9 @@ if($method == 'POST')
             		if($CATEGORY !="" || $ENT_CAT !=""){ $discategory = " category sold "; }	else { $discategory = ""; }
             		if($ARTICLE !="" || $ENT_ARTICLE !=""){$disarticle = " article sold ";} else	{ $disarticle = ""; }
 			if($SHOPNAME !="" || $ENT_SHOP !="") { $disshop = " of shop "; } else{	$disshop = "";	}
-			if($YR != '0')	{      $disyear = "for year ";} else {$disyear = "";}
-			if($QTR != '0')	{      $disqtr = "in quarter ";} else {$disqtr = "";}
-			if($MTH != '0')	{      $dismth = "for month ";} else {$dismth = "";}
+			if($YR != '0')	{      $disyear = " for year ";} else {$disyear = "";}
+			if($QTR != '0')	{      $disqtr = " in quarter ";} else {$disqtr = "";}
+			if($MTH != '0')	{      $dismth = " for month ";} else {$dismth = "";}
 			
 			
 			
