@@ -25,10 +25,8 @@ if($method == 'POST')
 				
 		}
 	}
-			
-	
-	
-	
+	echo $my_action;
+	echo $action;
 	if(($com == 'liststates' || $com == 'shoplist' || $com == 'listcity' || $com == 'listfamily' || $com == 'listcategory' || $com == 'listarticle' || $com == 'listyear') && $my_action == 'amountsold' && $action == 'MyPreviousIntent')
 	{$com = "amountsold";}
 	
