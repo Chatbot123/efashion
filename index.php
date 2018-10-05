@@ -37,7 +37,7 @@ if($method == 'POST')
 	
 	if(($com == 'liststates' || $com == 'shoplist' || $com == 'listcity' || $com == 'listfamily' || $com == 'listcategory' || $com == 'listarticle' || $com == 'listyear') && $my_action == 'margin' && $action == 'MyPreviousIntent')
 	{$com = "margin";}
-	
+	echo $com;
 	//to execute xsjs for high and low measures
 	$xsjs_url = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/EFASHION_DEV_TOP.xsjs?";
 		
