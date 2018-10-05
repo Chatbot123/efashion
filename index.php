@@ -25,17 +25,17 @@ if($method == 'POST')
 				
 		}
 	}
-	echo $my_action;
-	echo $action;
-	if(($com == 'liststates' || $com == 'shoplist' || $com == 'listcity' || $com == 'listfamily' || $com == 'listcategory' || $com == 'listarticle' || $com == 'listyear') && $my_action == 'amountsold' && $action == 'MyPreviousIntent')
+	//echo $my_action;
+	//echo $action;
+	if(($com == 'liststates' || $com == 'shoplist' || $com == 'listcity' || $com == 'listfamily' || $com == 'listcategory' || $com == 'listarticle' || $com == 'listyear') && $myaction == 'amountsold' && $action == 'MyPreviousIntent')
 	{$com = "amountsold";}
 	
-	if(($com == 'liststates' || $com == 'shoplist' || $com == 'listcity' || $com == 'listfamily' || $com == 'listcategory' || $com == 'listarticle' || $com == 'listyear') && $my_action == 'qtysold' && $action == 'MyPreviousIntent' )
+	if(($com == 'liststates' || $com == 'shoplist' || $com == 'listcity' || $com == 'listfamily' || $com == 'listcategory' || $com == 'listarticle' || $com == 'listyear') && $myaction == 'qtysold' && $action == 'MyPreviousIntent' )
 	{$com = "qtysold";}
 	
-	if(($com == 'liststates' || $com == 'shoplist' || $com == 'listcity' || $com == 'listfamily' || $com == 'listcategory' || $com == 'listarticle' || $com == 'listyear') && $my_action == 'margin' && $action == 'MyPreviousIntent')
+	if(($com == 'liststates' || $com == 'shoplist' || $com == 'listcity' || $com == 'listfamily' || $com == 'listcategory' || $com == 'listarticle' || $com == 'listyear') && $myaction == 'margin' && $action == 'MyPreviousIntent')
 	{$com = "margin";}
-	echo $com;
+	//echo $com;
 	//to execute xsjs for high and low measures
 	$xsjs_url = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/EFASHION_DEV_TOP.xsjs?";
 		
