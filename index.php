@@ -252,7 +252,7 @@ if($method == 'POST')
 	if(in_array($ENT_MEASURE, $marginmeasure)){$com = "margin"; }
 	$qtymeasure = array("QUANTITY","QTY","ITEMS","PRODUCTS");
 	if(in_array($ENT_MEASURE, $qtymeasure)){$com = "qtysold"; }
-	
+	echo $com;
 		if($com == 'amountsold' or $com == 'margin' or $com == 'qtysold' or $action == 'HighLowValues'  )
 		{
 			
