@@ -118,6 +118,7 @@ if($method == 'POST')
 		$YR = str_replace(' ', '', $YR);
 		$MTH = str_replace(' ', '', $MTH);
 		$QTR = str_replace(' ', '', $QTR);
+	$ENT_MEASURE = str_replace(' ', '', $ENT_MEASURE);
 		
 		$qty_array = array("QUANTITY","QTY","ITEMS","PRODUCTS");
 		if (in_array($ENT_MEASURE, $qty_array)) {$showqty=1;}
