@@ -141,12 +141,12 @@ if($method == 'POST')
 		if (in_array($ARTICLE, $useres)) {$ARTICLE=""; $ENT_ARTICLE ="";}   
 		
 		$drillarray = array("DRILLDOWN");
-		if (in_array($STATE, $drillarray)) {$STATE=""; }
-		if (in_array($CITY, $drillarray)) {$CITY=""; }
-		if (in_array($SHOPNAME, $drillarray)) {$SHOPNAME=""; }
-		if (in_array($FAMILY, $drillarray)) {$FAMILY=""; }
-		if (in_array($CATEGORY, $drillarray)) {$CATEGORY=""; }
-		if (in_array($ARTICLE, $drillarray)) {$ARTICLE=""; } 
+		if (in_array($STATE, $drillarray)) {$STATE=""; $ENT_STATE = "state"; }
+		if (in_array($CITY, $drillarray)) {$CITY=""; $ENT_CITY = "city";}
+		if (in_array($SHOPNAME, $drillarray)) {$SHOPNAME=""; $ENT_SHOP = "shop";}
+		if (in_array($FAMILY, $drillarray)) {$FAMILY=""; $ENT_FAM = "family";}
+		if (in_array($CATEGORY, $drillarray)) {$CATEGORY=""; $ENT_CAT = "category"; }
+		if (in_array($ARTICLE, $drillarray)) {$ARTICLE=""; $ENT_ARTICLE = "article";} 
 	
 		 
 		    
