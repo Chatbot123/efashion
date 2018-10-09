@@ -18,9 +18,9 @@ if($method == 'POST')
 	
 	if($action == 'input.welcome')
 	{ 
-		if(isset($json->queryResult->outputContexts))
+		if(isset($json->queryResult->outputContexts[1]))
 		{	
-			$outputContexts = "";
+			$json->queryResult->outputContexts[1]="";
 		}
 	}
 	
