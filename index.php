@@ -138,7 +138,17 @@ if($method == 'POST')
 		if (in_array($SHOPNAME, $useres)) {$SHOPNAME=""; $ENT_SHOP ="";}
 		if (in_array($FAMILY, $useres)) {$FAMILY=""; $ENT_FAM ="";}
 		if (in_array($CATEGORY, $useres)) {$CATEGORY=""; $ENT_CAT ="";}
-		if (in_array($ARTICLE, $useres)) {$ARTICLE=""; $ENT_ARTICLE ="";}    
+		if (in_array($ARTICLE, $useres)) {$ARTICLE=""; $ENT_ARTICLE ="";}   
+		
+		$drillarray = array("DRILLDOWN");
+		if (in_array($STATE, $drillarray)) {$STATE=""; }
+		if (in_array($CITY, $drillarray)) {$CITY=""; }
+		if (in_array($SHOPNAME, $drillarray)) {$SHOPNAME=""; }
+		if (in_array($FAMILY, $drillarray)) {$FAMILY=""; }
+		if (in_array($CATEGORY, $drillarray)) {$CATEGORY=""; }
+		if (in_array($ARTICLE, $drillarray)) {$ARTICLE=""; } 
+	
+		 
 		    
 		$userespnose = array("EACH", "EVERY","ALL");
 		if(in_array($YR, $userespnose))	{ $YR = 'ALL';	}
