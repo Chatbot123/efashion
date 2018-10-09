@@ -140,7 +140,7 @@ if($method == 'POST')
 		if (in_array($CATEGORY, $useres)) {$CATEGORY=""; $ENT_CAT ="";}
 		if (in_array($ARTICLE, $useres)) {$ARTICLE=""; $ENT_ARTICLE ="";}   
 		
-		$drillarray = array("DRILLDOWN");
+		$drillarray = array("DRILLDOWN", "WHATABOUT", "HOWABOUT");
 		if (in_array($STATE, $drillarray)) {$STATE=""; $ENT_STATE = "state"; }
 		if (in_array($CITY, $drillarray)) {$CITY=""; $ENT_CITY = "city";}
 		if (in_array($SHOPNAME, $drillarray)) {$SHOPNAME=""; $ENT_SHOP = "shop";}
