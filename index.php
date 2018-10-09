@@ -15,6 +15,14 @@ if($method == 'POST')
 	
 	if(isset($json->queryResult->action))
 		{	$action = $json->queryResult->action; } else {$action = '0';}
+	outputContexts
+	if($action == 'input.welcome')
+	{ 
+		if(isset($json->queryResult->outputContexts))
+		{	
+			$outputContexts = "";
+		}
+	}
 	
 	if($action == 'MyPreviousIntent' and $myaction == 'HighLowValues' )
 	{
