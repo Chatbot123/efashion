@@ -197,6 +197,13 @@ if($method == 'POST')
 			$xsjs_url .= "&ARTICLE=$ARTICLE"; 
 		 	$ENT_ARTICLE = "article";
 		 }
+	
+	$salemeasure = array("SALES","SALE");
+	if(in_array($ENT_MEASURE, $salemeasure)){$com = "amountsold"; }
+	$marginmeasure = array("MARGIN","PROFIT");
+	if(in_array($ENT_MEASURE, $marginmeasure)){$com = "margin"; }
+	$qtymeasure = array("QUANTITY","QTY","ITEMS","PRODUCTS");
+	if(in_array($ENT_MEASURE, $qtymeasure)){$com = "qtysold"; }
 		if($com!="")	
 		 { 
 			$xsjs_url .= "&COMMAND=$com";
@@ -256,12 +263,7 @@ if($method == 'POST')
 			$json = curl_exec( $ch );
 			$someobj = json_decode($json,true);
 		
-	$salemeasure = array("SALES","SALE");
-	if(in_array($ENT_MEASURE, $salemeasure)){$com = "amountsold"; }
-	$marginmeasure = array("MARGIN","PROFIT");
-	if(in_array($ENT_MEASURE, $marginmeasure)){$com = "margin"; }
-	$qtymeasure = array("QUANTITY","QTY","ITEMS","PRODUCTS");
-	if(in_array($ENT_MEASURE, $qtymeasure)){$com = "qtysold"; }
+	
 	//echo $ENT_MEASURE;
 	//echo $com;
 		if($com == 'amountsold' or $com == 'margin' or $com == 'qtysold' or $action == 'HighLowValues'  )
