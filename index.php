@@ -5,6 +5,8 @@ if($method == 'POST')
 {
 	$requestBody = file_get_contents('php://input');
 	$json = json_decode($requestBody);
+	
+	// Fetching values from dialogflow
 	if(isset($json->queryResult->parameters->command))
 		{	$com = $json->queryResult->parameters->command; } else {$com = "";}
 	
@@ -16,7 +18,7 @@ if($method == 'POST')
 	if(isset($json->queryResult->action))
 		{	$action = $json->queryResult->action; } else {$action = '0';}
 	
-	
+	//checking for correct intent (topbottom or other)
 	if($action == 'MyPreviousIntent' and $myaction == 'HighLowValues' )
 	{
 		if($com != "")
@@ -40,7 +42,7 @@ if($method == 'POST')
 	//to execute xsjs for high and low measures
 	$xsjs_url = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/EFASHION_DEV_TOP.xsjs?";
 		
-	
+	//fetching other values from dialogflow
 		if(isset($json->queryResult->parameters->STATE))
 		{	$STATE= $json->queryResult->parameters->STATE; } 
 	
@@ -109,7 +111,7 @@ if($method == 'POST')
 		$ENT_MEASURE= strtoupper($ENT_MEASURE);
 		$ENT_TOP_BOT= strtoupper($ENT_TOP_BOT);
 	
-	
+	//removing space between strings
 		$SHOPNAME = str_replace(' ', '', $SHOPNAME);
 		$CITY = str_replace(' ', '', $CITY);
 		$STATE = str_replace(' ', '', $STATE);
@@ -121,6 +123,7 @@ if($method == 'POST')
 		$QTR = str_replace(' ', '', $QTR);
 	$ENT_MEASURE = str_replace(' ', '', $ENT_MEASURE);
 		
+	//to display qty correctly. setting up flag 
 		$qty_array = array("QUANTITY","QTY","ITEMS","PRODUCTS");
 		if (in_array($ENT_MEASURE, $qty_array)) {$showqty=1;}
 	
