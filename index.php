@@ -197,7 +197,7 @@ if($method == 'POST')
 			$xsjs_url .= "&ARTICLE=$ARTICLE"; 
 		 	$ENT_ARTICLE = "article";
 		 }
-		if($action == 'showallvalues')
+		if($action == 'showallvalues' or $myaction == 'showallvalues')
 		{
 			$salemeasure = array("SALES","SALE");
 			if(in_array($ENT_MEASURE, $salemeasure)){$com = "amountsold"; }
