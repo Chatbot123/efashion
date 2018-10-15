@@ -321,7 +321,7 @@ if($method == 'POST')
 			
 			foreach ($someobj["results"] as $value) 
 			{
-				$speech .=  $distext.$show_dlr. $value["AMOUNT"]." ".$disshop.$value["SHOP_NAME"].$discity." ".$value["CITY"]." ".$disstate.$value["STATE"].$value["FAMILY_NAME"].$disfamily.$value["CATEGORY"].$discategory.$value["ARTICLE_LABEL"].$disarticle.$disqtr.$value["QTR"].$dismth.$value["MTH"].$disyear.$value["YR"];
+				$speech .=  $distext.$show_dlr. $value["AMOUNT"].$disshop.$value["SHOP_NAME"].$discity.$value["CITY"].$disstate.$value["STATE"]." ".$value["FAMILY_NAME"].$disfamily." ".$value["CATEGORY"].$discategory." ".$value["ARTICLE_LABEL"].$disarticle.$disqtr.$value["QTR"].$dismth.$value["MTH"].$disyear.$value["YR"];
 				$speech .= "\r\n";
 				//$speech .= "Do you want this info on mail\n";
 			 }
