@@ -35,7 +35,7 @@ if($method == 'POST')
 	
 	if(($com == 'liststates' || $com == 'shoplist' || $com == 'listcity' || $com == 'listfamily' || $com == 'listcategory' || $com == 'listarticle' || $com == 'listyear') && $myaction == 'qtysold' && $action == 'MyPreviousIntent' )
 	{$com = "qtysold";}
-	
+	 
 	if(($com == 'liststates' || $com == 'shoplist' || $com == 'listcity' || $com == 'listfamily' || $com == 'listcategory' || $com == 'listarticle' || $com == 'listyear') && $myaction == 'margin' && $action == 'MyPreviousIntent')
 	{$com = "margin";}
 	//echo $com;
