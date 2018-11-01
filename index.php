@@ -256,7 +256,7 @@ if($method == 'POST')
 	//echo $xsjs_url;
 		
 			$username    = "SANYAM_K";
-			$password    = "Welcome@123";
+			$password    = "Welcome@234";
 			$ch      = curl_init( $xsjs_url );
 			$options = array(
 			CURLOPT_SSL_VERIFYPEER => false,
