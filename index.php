@@ -229,7 +229,7 @@ if($method == 'POST')
 		if($ENT_MEASURE!="" )	 { $xsjs_url .= "&ENT_MEASURE=$ENT_MEASURE";}
 		if($NUM == "") 		{	$NUM='0'; } 
 		$top_array =  array("HIGHEST","MAXIMUM","LOWEST","MINIMUM");
-		if (in_array($ENT_TOP_BOT, $top_array)) 
+		if (in_array($ENT_TOP_BOT, $top_array)|| $NUM == 1) 
 		{
 			$NUM=1;
 			$disnum = "";
